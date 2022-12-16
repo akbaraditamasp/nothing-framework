@@ -1,0 +1,13 @@
+{
+    "name": "akbaraditamasp/nothing-framework",
+    "description": "A simple framework for creating Rest API using PHP",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "akbaraditamasp",
+            "email": "akbaraditamasp@gmail.com"
+        }
+    ],
+    "require": {}
+}
