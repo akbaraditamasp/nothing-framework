@@ -20,6 +20,7 @@
         "laminas/laminas-diactoros": "^2.23",
         "laminas/laminas-httphandlerrunner": "^2.4",
         "illuminate/database": "^9.44",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "robmorgan/phinx": "^0.13.3"
     }
 }
