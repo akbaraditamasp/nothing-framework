@@ -22,6 +22,8 @@
         "illuminate/database": "^9.44",
         "vlucas/phpdotenv": "^5.5",
         "robmorgan/phinx": "^0.13.3",
-        "medz/cors": "^1.5"
+        "medz/cors": "^1.5",
+        "kekos/multipart-form-data-parser": "^1.1",
+        "respect/validation": "^2.2"
     }
 }

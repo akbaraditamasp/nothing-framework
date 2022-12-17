@@ -53,6 +53,7 @@ class App
         $this->uploaded = new UploadedFileFactory();
         $this->stream = new StreamFactory;
 
+        BodyParser::boot($this);
         Cors::boot($this);
     }
 
