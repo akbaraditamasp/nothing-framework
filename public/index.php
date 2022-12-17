@@ -2,9 +2,11 @@
 
 use Bramus\Router\Router;
 use Nothing\App;
+use Nothing\Eloquent;
 
 require __DIR__ . "/../vendor/autoload.php";
 
+Eloquent::boot();
 $router = new Router();
 
 $router->setNamespace("\App\Controllers");
