@@ -1,6 +1,7 @@
 <?php
 
 use Bramus\Router\Router;
+use Nothing\App;
 
 require __DIR__ . "/../vendor/autoload.php";
 
@@ -8,4 +9,6 @@ $router = new Router();
 
 require __DIR__ . "/../routes/routes.php";
 
-$router->run();
+$router->run(function () {
+    App::handle();
+});

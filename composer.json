@@ -3,6 +3,11 @@
     "description": "A simple framework for creating Rest API using PHP",
     "type": "project",
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Nothing\\": "nothing/"
+        }
+    },
     "authors": [
         {
             "name": "akbaraditamasp",
@@ -10,6 +15,8 @@
         }
     ],
     "require": {
-        "bramus/router": "~1.6"
+        "bramus/router": "~1.6",
+        "laminas/laminas-diactoros": "^2.23",
+        "laminas/laminas-httphandlerrunner": "^2.4"
     }
 }
