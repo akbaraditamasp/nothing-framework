@@ -8,6 +8,7 @@ use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\ServerRequestFactory;
 use Laminas\Diactoros\StreamFactory;
 use Laminas\Diactoros\UploadedFileFactory;
+use Psr\Http\Message\ResponseInterface;
 
 class App
 {
@@ -21,7 +22,7 @@ class App
      * Response
      * @var Laminas\Diactoros\Response
      */
-    private Response $response;
+    private ResponseInterface $response;
 
     /**
      * Uploaded
@@ -55,7 +56,7 @@ class App
         $this->stream = new StreamFactory;
     }
 
-    public function setResponse(Response $response)
+    public function setResponse(ResponseInterface $response)
     {
         $this->response = $response;
     }

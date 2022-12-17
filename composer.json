@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Nothing\\": "nothing/"
+            "Nothing\\": "nothing/",
+            "App\\": "app/"
         }
     },
     "authors": [
