@@ -4,37 +4,35 @@ namespace Nothing;
 
 use Exception;
 use Laminas\Diactoros\Response;
-use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\ServerRequestFactory;
 use Laminas\Diactoros\StreamFactory;
 use Laminas\Diactoros\UploadedFileFactory;
-use Psr\Http\Message\ResponseInterface;
 
 class App
 {
     /**
      * Request
-     * @var Laminas\Diactoros\ServerRequestFactory
+     * @var Laminas\Diactoros\ServerRequest
      */
-    private ServerRequest $request;
+    public $request;
 
     /**
      * Response
      * @var Laminas\Diactoros\Response
      */
-    private ResponseInterface $response;
+    public $response;
 
     /**
      * Uploaded
      * @var Laminas\Diactoros\UploadedFileFactory
      */
-    private UploadedFileFactory $uploaded;
+    public $uploaded;
 
     /**
      * Stream
      * @var Laminas\Diactoros\StreamFactory
      */
-    private StreamFactory $stream;
+    public $stream;
 
     /**
      * Callback
@@ -54,11 +52,8 @@ class App
         $this->response = new Response();
         $this->uploaded = new UploadedFileFactory();
         $this->stream = new StreamFactory;
-    }
 
-    public function setResponse(ResponseInterface $response)
-    {
-        $this->response = $response;
+        Cors::boot($this);
     }
 
     public function finish()
@@ -76,7 +71,7 @@ class App
     {
         $app = new App();
         try {
-            $app->setResponse($app->response->withHeader("Content-Type", "application/json"));
+            $app->response = $app->response->withHeader("Content-Type", "application/json");
             $payload = json_encode((App::$cb)($app));
             $app->response->getBody()->write($payload);
             $app->finish();
@@ -84,7 +79,7 @@ class App
             $app->response->getBody()->write(json_encode([
                 "error" => "Internal error"
             ]));
-            $app->setResponse($app->response->withStatus(404)->withHeader("Content-Type", "application/json"));
+            $app->response = $app->response->withStatus(404)->withHeader("Content-Type", "application/json");
             $app->finish();
         }
     }

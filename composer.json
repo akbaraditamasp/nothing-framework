@@ -21,6 +21,7 @@
         "laminas/laminas-httphandlerrunner": "^2.4",
         "illuminate/database": "^9.44",
         "vlucas/phpdotenv": "^5.5",
-        "robmorgan/phinx": "^0.13.3"
+        "robmorgan/phinx": "^0.13.3",
+        "medz/cors": "^1.5"
     }
 }
