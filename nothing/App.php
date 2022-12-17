@@ -3,6 +3,7 @@
 namespace Nothing;
 
 use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Laminas\Diactoros\Response;
 use Laminas\Diactoros\ServerRequestFactory;
 use Laminas\Diactoros\StreamFactory;
@@ -80,6 +81,12 @@ class App
             $app->response = $app->response->withHeader("Content-Type", "application/json");
             $payload = json_encode((App::$cb)($app));
             $app->response->getBody()->write($payload);
+            $app->finish();
+        } catch (ModelNotFoundException $e) {
+            $app->response->getBody()->write(json_encode(
+                ["error" => "Model not found"]
+            ));
+            $app->response = $app->response->withStatus(404)->withHeader("Content-Type", "application/json");
             $app->finish();
         } catch (Exception $e) {
             $app->response->getBody()->write(json_encode([
