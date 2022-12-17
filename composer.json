@@ -24,6 +24,7 @@
         "robmorgan/phinx": "^0.13.3",
         "medz/cors": "^1.5",
         "kekos/multipart-form-data-parser": "^1.1",
-        "respect/validation": "^2.2"
+        "respect/validation": "^2.2",
+        "endyjasmi/cuid": "^2.1"
     }
 }

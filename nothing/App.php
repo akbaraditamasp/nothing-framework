@@ -57,6 +57,11 @@ class App
         Cors::boot($this);
     }
 
+    public function validate($rules)
+    {
+        return Validation::validate($rules, $this);
+    }
+
     public function finish()
     {
         (new \Laminas\HttpHandlerRunner\Emitter\SapiEmitter())->emit($this->response);

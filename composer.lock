@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e31db3d2192b4ff97841367be3fdf9f3",
+    "content-hash": "e91d8fb04a5205a18bf019254ea3e643",
     "packages": [
         {
             "name": "bramus/router",
@@ -377,6 +377,60 @@
                 }
             ],
             "time": "2022-10-20T09:10:12+00:00"
+        },
+        {
+            "name": "endyjasmi/cuid",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/endyjasmi/cuid.git",
+                "reference": "a425a1071cb07bafc9355e85dd288b5b5d1245f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/endyjasmi/cuid/zipball/a425a1071cb07bafc9355e85dd288b5b5d1245f5",
+                "reference": "a425a1071cb07bafc9355e85dd288b5b5d1245f5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "satooshi/php-coveralls": "0.*",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EndyJasmi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Endy Jasmi",
+                    "email": "endyjasmi@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Cuid php port",
+            "keywords": [
+                "UID",
+                "cuid",
+                "guid",
+                "id",
+                "uuid"
+            ],
+            "support": {
+                "email": "endyjasmi@gmail.com",
+                "issues": "https://github.com/endyjasmi/cuid/issues",
+                "source": "https://github.com/endyjasmi/cuid"
+            },
+            "time": "2020-01-02T02:46:25+00:00"
         },
         {
             "name": "graham-campbell/result-type",
